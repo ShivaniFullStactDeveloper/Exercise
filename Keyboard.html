@@ -1,292 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keyboard</title>
     <style>
-        .main {
-            background-color: gray;
+        .main{
+            background-color: gray; 
             display: grid;
             grid-template-columns: 3fr 1fr;
-            height: 45vh;
-            width: 90vw;
+            height: 60vh;
+            width: 100vw; 
             padding: 10px;
             margin: 5px;
 
         }
-
-        .left {
+       
+        .left{
             background-color: bisque;
-            grid-template-columns: 1fr;
-            width: 70vw;
-            height: 44vh;
-            margin-right: 5px;
-            padding: 5px;
-
-        }
-
-        /* first row */
-        .first {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr;
-            /* margin: 5px; */
-            background-color: none;
+            grid-template-columns: 1fr ;
             width: 100%;
-            height: 12%;
-            color: white;
+            height: 60vh;
         }
-
-        /* sec row */
-        .sec {
+         /* first row */
+         .first{
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-template-rows: 1fr;
-            background-color: none;
+           margin: 5px;
+            background-color: black;
             width: 100%;
             height: 15%;
-            color: white;
-            /* margin: 5px; */
-        }
-
-        /* third */
-        .third {
-            display: grid;
-            grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.2fr;
-            grid-template-rows: 1fr;
-            /* margin: 5px; */
-            background-color: none;
-            width: 100%;
-            height: 15%;
-            color: white;
-        }
-
-        /* forth */
-        .forth-row {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.6fr;
-            grid-template-rows: 1fr;
-            background-color: none;
-            width: 100%;
-            height: 15%;
-            color: white;
-            /* margin: 5px; */
-        }
-
-        /* fifth */
-        .fifth-row {
-            display: grid;
-            grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1.8fr;
-            grid-template-rows: 1fr;
-            background-color: none;
-            width: 100%;
-            height: 15%;
-            color: white;
-            margin: 5px;
-        }
-
-        /* sisth */
-        .sixth-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 7fr 1fr 1fr 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr;
-            background-color: none;
-            width: 100%;
-            height: 15%;
-            color: white;
-            /* margin: 5px; */
-        }
-
-        .color {
-            background-color: gray;
-            margin: 5px;
-            border: 1px solid black;
-            border-radius: 10px;
-
-        }
-
-        .right {
-            background-color: aqua;
-            height: 44vh;
-            width: 18vw;
-            padding: 5px;
-        }
-
-        /* right side */
-        /* r one */
-        .rone-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr;
-            /* margin: 5px; */
-            background-color: none;
-            width: 100%;
-            height: 14%;
-            color: white;
-        }
-
-        /* rtwo-row */
-        .rtwo-row{
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr;
-            background-color: none;
-            width: 100%;
-            height: 17%;
-            color: white;
-            /* margin: 5px; */
-        }
-        .item{
-            grid-row: 2 \ span 3;
+        
+            
+         }
+        .right{
+          background-color: aqua;
         }
     </style>
 </head>
-
 <body>
     <!-- main -->
     <div class="main">
         <!-- left -->
         <div class="left">
-            <div class="first">
-                <div class="color">esc</div>
-                <div class="color">f1</div>
-                <div class="color">f2</div>
-                <div class="color">f3</div>
-                <div class="color">f4</div>
-                <div class="color">f5</div>
-                <div class="color">f6</div>
-                <div class="color">f7</div>
-                <div class="color">f8</div>
-                <div class="color">f9</div>
-                <div class="color">f10</div>
-                <div class="color">f11</div>
-                <div class="color">f12</div>
-                <div class="color">ins</div>
-                <div class="color">delet</div>
-            </div>
-            <div class="sec">
-                <div class="color">~ <br> `</div>
-                <div class="color">! <br>1</div>
-                <div class="color">@ <br> 2</div>
-                <div class="color"># <br>3</div>
-                <div class="color">$ <br> 4</div>
-                <div class="color">% <br> 5</div>
-                <div class="color">^ <br> 6</div>
-                <div class="color">& <br> 7</div>
-                <div class="color">* <br> 8</div>
-                <div class="color">( <br> 9</div>
-                <div class="color">) <br> 0</div>
-                <div class="color">_ <br> -</div>
-                <div class="color">+ <br> =</div>
-                <div class="color">backspace</div>
-            </div>
-            <div class="third">
-                <div class="color">tab</div>
-                <div class="color">Q</div>
-                <div class="color">W</div>
-                <div class="color">E</div>
-                <div class="color">R</div>
-                <div class="color">T</div>
-                <div class="color">Y</div>
-                <div class="color">U</div>
-                <div class="color">I</div>
-                <div class="color">O</div>
-                <div class="color">P</div>
-                <div class="color">{ <br> [</div>
-                <div class="color">} <br> ]</div>
-                <div class="color">| <br> \</div>
-            </div>
-            <div class="forth-row">
-                <div class="color">caps lock</div>
-                <div class="color">A</div>
-                <div class="color">S</div>
-                <div class="color">D</div>
-                <div class="color">F</div>
-                <div class="color">G</div>
-                <div class="color">H</div>
-                <div class="color">J</div>
-                <div class="color">K</div>
-                <div class="color">L</div>
-                <div class="color">: <br> ;</div>
-                <div class="color">" <br> '</div>
-                <div class="color">enter <br> \</div>
-            </div>
-            <div class="fifth-row">
-                <div class="color">shift</div>
-                <div class="color">Z</div>
-                <div class="color">X</div>
-                <div class="color">C</div>
-                <div class="color">V</div>
-                <div class="color">B</div>
-                <div class="color">N</div>
-                <div class="color">M</div>
-                <div class="color">
-                    < <br> ,
-                </div>
-                <div class="color">> <br> .</div>
-                <div class="color">pase <br> shift</div>
-            </div>
-            <div class="sixth-row">
-                <div class="color">ctrl</div>
-                <div class="color">fn</div>
-                <div class="color">win</div>
-                <div class="color">alt</div>
-                <div class="color"></div>
-                <div class="color">alt</div>
-                <div class="color">ctrl</div>
-                <div class="color">l</div>
-                <div class="color">
-                    < <br> ,
-                </div>
-                <div class="color">r</div>
-            </div>
+            <div class="first"></div>
+            <div class="first"></div>
+            <div class="first"></div>
+            <div class="first"></div>
+            <div class="first"></div>
+            <div class="first"></div>
 
-
-
-
+          
         </div>
         <!-- right  -->
         <div class="right">
-            <div class="rone-row">
-                <div class="color">home</div>
-                <div class="color">end</div>
-                <div class="color">pg up</div>
-                <div class="color">pg dn</div>
-            </div>
-            <div class="rtwo-row">
-                <div class="color">num <br> lock</div>
-                <div class="color">/</div>
-                <div class="color">*</div>
-                <div class="color">-</div>
-            </div>
-            <div class="rtwo-row">
-                <div class="color">7</div>
-                <div class="color">8</div>
-                <div class="color">9</div>
-                <div class="color item">+</div>
-            </div>
-            <div class="rtwo-row">
-                <div class="color">4</div>
-                <div class="color">5</div>
-                <div class="color" >6</div>
-                <!-- <div class="color"></div> -->
-            </div>
-            <div class="rtwo-row">
-                <div class="color">1</div>
-                <div class="color">2</div>
-                <div class="color">3</div>
-                <div class="color">enter</div>
-            </div>
-            <div class="rtwo-row">
-                <div class="color">0</div>
-                <div class="color">.</div>
-                <div class="color">pg up</div>
-                <div class="color">pg dn</div>
-            </div>
+
         </div>
     </div>
 </body>
-
 </html>
