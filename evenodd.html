@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Even or Odd</title>
+    <style>
+        .main {
+            background-color: gray;
+            height: 500px;
+            width: 90vw;
+            border-radius: 20px;
+        }
+
+        /* display */
+        #display {
+            height: 200px;
+            background-color: blue;
+            width: 90vw;
+            border-radius: 20px;
+
+        }
+
+        input {
+            height: 50px;
+            background-color: darkgoldenrod;
+        }
+
+        button {
+            height: 50px;
+            width: 150px;
+            background-color: cadetblue;
+        }
+    </style>
+    <script>
+
+        //    let total = 0;
+        // let x = document.getElementById("numberone").value;
+
+        //    function showresult(Number){
+        //         if(result == 0){
+        //             result = result % Number(even);
+        //         } else if(result == 1){
+        //             result = result % Number(odd);
+        //         }
+        //         document.getElementById("display").innerHTML= "the no is";
+        //     }
+        let result = Number % 2;
+          
+        function showresult() {
+            let result = document.getElementById("first").value;
+
+            if (result == 0) {
+                return "even";
+            } else if (result == 1) {
+                return "odd";
+            }
+            document.getElementById("display").innerHTML = "the no is";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <!-- display -->
+        <h1 id="display">0</h1>
+        <!-- input -->
+        <input type="number" id="first" value="" />
+        <input type="number" value="" />
+        <br />
+        <!-- buttons -->
+        <button type="button" onclick="showresult()">Check<br>Even or Odd </button>
+        <button type="button">Check<br> Vote </button>
+        <button type="button">Check<br>Equal</button>
+
+    </div>
+</body>
+
+</html>
