@@ -43,18 +43,44 @@
         //             result = result % Number(odd);
         //         }
         //         document.getElementById("display").innerHTML= "the no is";
-        //     }
-        let result = Number % 2;
-          
-        function showresult() {
-            let result = document.getElementById("first").value;
+        //  
+        // }
 
-            if (result == 0) {
-                return "even";
-            } else if (result == 1) {
-                return "odd";
+        // evev or odd
+        let number;
+
+        function showresult() {
+            number = document.getElementById("first").value;
+
+            if (number % 2 == 0) {
+                document.getElementById("display").innerHTML = "The no is even";
+            } else {
+                document.getElementById("display").innerHTML = "The no is odd";
             }
-            document.getElementById("display").innerHTML = "the no is";
+        }
+        // vote
+        let vote;
+        function votercheck() {
+            vote = document.getElementById("first").value;
+
+            if (vote >=18) {
+                document.getElementById("display").innerHTML = "Eligible for vote.";
+            } else {
+                document.getElementById("display").innerHTML = "Not eligible for vote.";
+            }
+        }
+
+        // Equal
+        let equal;
+        function equalnum() {
+            equal =Number(document.getElementById("first").value);
+            equal = Number(document.getElementById("second").value);
+
+            if (equal == 0) {
+                document.getElementById("display").innerHTML = "No is equal.";
+            } else {
+                document.getElementById("display").innerHTML = "No is not equal.";
+            }
         }
     </script>
 </head>
@@ -65,12 +91,12 @@
         <h1 id="display">0</h1>
         <!-- input -->
         <input type="number" id="first" value="" />
-        <input type="number" value="" />
+        <input type="number" id="second" value="" />
         <br />
         <!-- buttons -->
         <button type="button" onclick="showresult()">Check<br>Even or Odd </button>
-        <button type="button">Check<br> Vote </button>
-        <button type="button">Check<br>Equal</button>
+        <button type="button" onclick="votercheck()">Check<br> Vote </button>
+        <button type="button" onclick="equalnum()">Check<br>Equal</button>
 
     </div>
 </body>
