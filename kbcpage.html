@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBC</title>
+    <style>
+        .main-container {
+            height: 100%;
+            width: 100%;
+            background-color: none;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #play-button {
+            height: 60px;
+            width: 150px;
+            background-color: #030637;
+            font-size: 20px;
+            color: white;
+            border-radius: 60%;
+            margin: 30px;
+        }
+
+        .display {
+            width: 80%;
+            height: 200px;
+            background-color: #190a36;
+            margin-left: 10%;
+            border-radius: 50px;
+            margin-top: 100px;
+            border-style: solid;
+        }
+
+        #display-text {
+            font-size: 50px;
+            color: white;
+        }
+
+        .button {
+            height: 70px;
+            width: 400px;
+            border-radius: 250px;
+            margin: 20px;
+            margin-left: 15%;
+            margin-top: 40px;
+     
+            
+        }
+    </style>
+    <script>
+        function dostart() {
+            document.getElementById("main-body").hidden = false;
+            document.getElementById("play-button").hidden = true;
+        }
+    </script>
+</head>
+
+<body
+    style="background-image: url(https://images.livemint.com/img/2022/07/12/1600x900/Kaun-Banega-Crorepati-1_1657603983822_1657604025637_1657604025637.webp); height: 100%; width: 100vw; background-repeat: no-repeat;">
+    <button id="play-button" onclick="dostart()">START</button>
+    <div class="main-container" id="main-body">
+        <div class="display">
+            <h1 id="display-text">0</h1>
+        </div>
+        <div>
+            <button class="button" onclick="answer(1)"></button>
+            <button class="button" onclick="answer(2)"></button>
+        </div>
+        <div>
+            <button class="button" onclick="answer(3)"></button>
+            <button class="button" onclick="answer(4)"></button>
+        </div>
+    </div>
+</body>
+
+</html>
