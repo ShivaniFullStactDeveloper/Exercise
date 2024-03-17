@@ -130,15 +130,14 @@
             let output = parseInt((Math.random() * 100) / 10);
             
             if(BetCoins <= 0 || BetNumber >0){
-                document.getElementById("display").innerHTML = "BET NUMBER IS:" + BetCoins;
+                document.getElementById("display").innerHTML = "BET NUMBER IS:" + Coins;
+            }
+            if(BetCoins > Coins){
+                
             }
 
 
-            if (coins > 10) {
-                BetNumber = output + coins * 9;
-            } else {
-                coins = output - coins * 9;
-            }
+            
             document.getElementById("display").innerHTML = output;
         } 
     
@@ -165,6 +164,13 @@
         </div>
         <!-- third col -->
         <div class="third-contain">
+            <div class="boxes"></div>
+            <div class="boxes"></div>
+            <div class="boxes"></div>
+            <div class="boxes"></div>
+            <div class="boxes"></div>
+            <div class="boxes"></div>
+            <div class="boxes"></div>
             <div class="boxes"></div>
         </div>
     </div>
