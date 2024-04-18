@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             background-image: url(https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3JtNDIyLTA3Ni14LmpwZw.jpg);
@@ -33,28 +40,124 @@
         header {
             background-color: rgba(3, 1, 13, 0.4);
             height: 100px;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            margin-top: 1px;
+            font-family: "Yeseva One", serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .enjoy-style {
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXE6VZapho3ZN2sfXiQi13BBF_NSC4E6xMPA&usqp=CAU);
+            /* background-repeat: no-repeat; */
+            background-position: center;
+            color: transparent;
+            background-clip: text;
+            display: grid;
+            justify-content: center;
+            align-items: center;
 
         }
-        .heading{
+
+        /* footer */
+        footer {
+            height: 60px;
+            background-color: rgba(6, 3, 23, 0.4);
+            margin-top: 90px;
+            /* position: fixed; */
+        }
+
+        .heading {
             margin: 50px;
             margin-top: 180px;
             color: cornsilk;
             font-size: 23px;
-          
+
+        }
+
+
+        .icons {
+            font-size: 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            color: white;
+            /* Set to 100% of the parent element */
+            height: 60px;
+            /* Height can be adjusted as needed */
+            margin: auto;
+            /* This will center the .icons div horizontally */
+        }
+
+        .social-button {
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            /* Makes the icons circular */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+            /* Adds space between the icons */
+            text-decoration: none;
+            /* Removes underline from links */
+        }
+
+        /* paragraph */
+        p{
+            font-size: 28px;
+            font-weight: bold;
+            margin: 50px;
+            color: beige;
+        }
+        /* button */
+        button{
+            height: 50px;
+            width: 150px;
         }
     </style>
+    <!-- sec link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch+Pop&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div>
-        <header></header>
+        <header class="enjoy-style"><u>ENJOY &nbsp; PROGRAMMIMG</u></header>
     </div>
     <img class="myimage" src="/Users/enjoy_programming_c/Documents/Shivani_myProject-main/my_images/Chivu.jpg" />
     <div class="heading">
-        <h1 >Hello , I Am <br>
-        Shivani Kharpuriya. </h1>
-        <h1>FULL STACK DEVELOPER</h1>
+        <h1>Hello , I Am <br>
+            Shivani Kharpuriya. </h1>
+        <h1><u>FULL STACK DEVELOPER</u></h1>
     </div>
+    <p>Click Here To See My Projects. </p>
+    <button type="button">Click</button>
+    <footer>
+        <div class="icons">
+            <a href="https://www.linkedin.com/in/shivani-kharpuriya-089569249/" class="social-button social-button--linkedin"
+                aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <!-- </div> -->
+            <!-- <div class="icons"> -->
+            <a href="https://github.com/ShivaniFullStactDeveloper/Shivani_myProject" class="social-button social-button--linkedin"
+                aria-label="LinkedIn">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://web.skype.com/8:live:.cid.5888ddfec136156f?inviteId=rEwDMd4mlLJS&correlationId=d945aafb-0832-4ad8-bd40-687045ef6539" class="social-button social-button--linkedin"
+                aria-label="LinkedIn">
+                <i class="fab fa-skype"></i>
+            </a>
+        </div>
+    </footer>
 </body>
 
 </html>
