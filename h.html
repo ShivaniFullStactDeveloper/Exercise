@@ -6,8 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /* html */
+        html{
+            /* scroll-behavior: smooth; */
+        }
         /* main container */
-        .main-container {}
+        .main-container {
+            height: 1850px;
+            width: 98.7vw;
+            background-color: black;
+        }
 
         header {
             background-color: rgb(23, 24, 24);
@@ -16,7 +24,8 @@
             margin: 0px;
             padding: 0px;
         }
-        .bottom{
+
+        .bottom {
             box-sizing: border-box;
             color: rgb(255, 189, 57);
             cursor: pointer;
@@ -37,68 +46,157 @@
             -webkit-tap-highlight-color: rgba(149, 193, 79, 0.7);
             margin: 10px;
             margin-right: 50px;
-            }
+        }
 
-.menu{
-    float: right;
-    display: inline-block;
-    margin: 10px;
-    margin-right: 10px;
-    font-size: 25px;
-    position: relative;
-    color: white;
- 
-}
+        .menu {
+            float: right;
+            display: inline-block;
+            margin: 10px;
+            margin-right: 10px;
+            font-size: 25px;
+            position: relative;
+            color: white;
 
-.nav-item{
-    border-style: none;
-    box-sizing: border-box;
-}
+        }
 
-            /* header heading */
-            .top-heading {
-                font-size: 44px;
-                font-weight: bold;
-                text-align: center;
-                color: white;
-                padding: 5px;
-            }
+        .nav-item {
+            border-style: none;
+            box-sizing: border-box;
+        }
 
-            .first-section {
-                background-color: black;
-                height: 500px;
-                width: 98.7vw;
-            }
+        /* header heading */
+        .top-heading {
+            font-size: 44px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            padding: 5px;
+        }
 
-            .sec-section {
-                background-color: rgb(45, 45, 51);
-                height: 1000px;
-                width: 98.7vw;
-            }
+        /* first box */
+        .first-section {
+            background-color: black;
+            height: 500px;
+            width: 98.7vw;
+        }
 
-            .third-section {
-                background-color: rgb(17, 26, 19);
-                height: 200px;
-                width: 98.7vw;
-            }
+        /* second box */
+        .sec-section {
+            background-color: rgb(45, 45, 51);
+            height: 1000px;
+            width: 98.7vw;
+           /* display: flex;
+           flex-direction: row; */
+        }
+
+
+        /* third box */
+        .third-section {
+            background-color: rgb(17, 26, 19);
+            height: 200px;
+            width: 98.7vw;
+        }
+
+        /* my name */
+        .my-name {
+            margin: 20px;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        /* my image */
+        .myimage {
+            height: 280px;
+            width: 280px;
+            border-radius: 50%;
+            float: right;
+            margin: 50px;
+            box-shadow: 10px 10px 10px 15px rgb(149, 149, 182);
+            transition: all 2s ease-in-out;
+        }
+
+        /* my image */
+        .myimage:hover {
+            transform: scale(1.1);
+            transition: all 2s ease-in-out;
+        }
+        /* project */
+        .project{
+            font-size: 44px;
+            /* text-align: center; */
+            color: white;
+            margin-left: 41vw;
+           
+        }
+     
+    .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            row-gap: 20px;
+            column-gap: 20px;
+            /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+            padding: 10px;
+            /* background-color: black; */
+        }
+
+        .grid-container div {
+            background-color: rgba(24, 18, 18, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+            aspect-ratio: 1;
+            /* box-shadow: 10px 10px 10px  #4b6c70; */
+    
+        }
     </style>
 </head>
 
 <body style="margin: 0px;">
+    <!-- main container -->
     <div class="main-container">
+        <!-- header section -->
         <header>
+            <!-- headind -->
             <h1 class="top-heading">ASSIGNMENT PROJECT</h1>
+            <!-- link -->
             <div class="menu">
-               
-                <a class="bottom"  href="#section-one"><span>Home</span></a>
+
+                <a class="bottom" href="#section-one"><span>Home</span></a>
                 <a class="bottom" href="#section-two"><span>Project</span></a>
                 <a class="bottom" href="#section-three"><span>Contact</span></a>
-          
+
             </div>
         </header>
-
-        <div class="first-section" id="section-one"></div>
-        <div class="sec-section" id="section-two"></div>
+<!-- Home section -->
+        <div class="first-section" id="section-one">
+            <img class="myimage" src="my_images/Chivu.jpg" height="200px" width="200px" />
+            <div class="my-name">
+                <h1>Hello !</h1>
+                <h1>I Am, Shivani Kharpuriya</h1>
+                <h1>FULL STACK DEVELOPER</h1>
+            </div>
+        </div>
+        <!-- Project section -->
+        <div class="sec-section" id="section-two">
+            <div class="project">
+                <h1>Projects</h1>
+            </div>
+           
+            <div class="grid-container">
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                
+            </div>
+        </div>
+        <!-- contact section -->
         <div class="third-section" id="section-three"></div>
         <div id="section-four"></div>
     </div>
