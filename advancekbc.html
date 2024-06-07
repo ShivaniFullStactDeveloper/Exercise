@@ -58,7 +58,7 @@
 
         /* left part */
         .left-side {
-            background-color: rgb(56, 83, 83);
+            /* background-color: rgb(56, 83, 83); */
 
 
 
@@ -66,7 +66,7 @@
 
         /* right part */
         .right-side {
-            background-color: rgb(209, 162, 24);
+            background-color: rgba(41, 29, 115, 0.4) ;
 
 
         }
@@ -83,7 +83,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
+            margin-top: 50px;
         }
 
         .text-display {
@@ -97,6 +97,8 @@
         function doStart() {
             document.getElementById("play-button").hidden = true;
             document.getElementById("main-body").hidden = false;
+            // display que
+            displayQuestion()
         }
 
 
@@ -111,14 +113,75 @@
             startScreen();
         }
 
-        const questions= [
+        let questions= [
         {
             question:"Among the following, which is a network?",
             answers:["A) MAN","B) WAN","C) LAN","D) All of these"],
-            correct:3,
+            correct:4,
+        },
+        {
+            question:"What does Fn mean in Fn key of the computer keyboard?",
+            answers:["A) Finish","B) Function","C) Final","D) Fun"],
+            correct:2,
+        },
+        {
+            question: "CPU is also referred to as?",
+            answers:["A) Micro chip","B) Microprocessor","C) Decoder","D) Coder"],
+            correct:2,
         }
         ]
 
+        let correctQuestionIndex = 0;
+
+        function displayQuestion(){
+            let q = questions[correctQuestionIndex];
+            // input question
+            document.getElementById("text-display").innerHTML = q.question;
+
+            // input option one
+            document.getElementById("answer-one").innerHTML = q.answers[0];
+             // input option two
+             document.getElementById("answer-two").innerHTML = q.answers[1];
+              // input option three
+            document.getElementById("answer-three").innerHTML = q.answers[2];
+             // input option four
+             document.getElementById("answer-four").innerHTML = q.answers[3];
+
+        }
+
+        function answer(givenAnswer){
+            if(questions[correctQuestionIndex].correct === givenAnswer){
+                answerOne();
+                correctQuestionIndex ++;
+                if(correctQuestionIndex < questions.length){
+                    displayQuestion();
+                }
+            }
+        }
+
+         // correct or not
+         function answerOne(correctAnswer, nextQuestion, correctAnswwerbutton, buttonClick) {
+            if (correctAnswer) {
+                document.getElementById("text-display").innerHTML =
+                    "Bilkul Sahi Jawab";
+                document.getElementById("container").style.backgroundColor =
+                    "#004225";
+                colorButton(correctAnswwerbutton, buttonClick);
+
+                setTimeout(() => {
+                    question(nextQuestion);
+                }, 3000);
+            } else {
+                document.getElementById("text-display").innerHTML =
+                    " Galat Jawab.";
+                document.getElementById("container").style.backgroundColor =
+                    "#FF0000";
+                colorButton(correctAnswwerbutton, buttonClick);
+                setTimeout(() => {
+                    startScreen();
+                }, 2000);
+            }
+        }
     </script>
 
 </head>
