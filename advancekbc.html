@@ -47,7 +47,7 @@
             width: 440px;
             border-radius: 250px;
             margin: 10px;
-            margin-left: 6%;
+            margin-left: 5%;
             margin-top: 60px;
             background-color: #0B60B0;
             font-size: 30px;
@@ -66,7 +66,7 @@
 
         /* right part */
         .right-side {
-            background-color: rgba(41, 29, 115, 0.4) ;
+            background-color: rgba(41, 29, 115, 0.4);
 
 
         }
@@ -91,6 +91,48 @@
             color: white;
 
         }
+
+        /* loader */
+        /* HTML: <div class="loader"></div> */
+        .loader {
+            width: 40px;
+            aspect-ratio: 1;
+            color: #f03355;
+            position: relative;
+            background:
+                conic-gradient(from 134deg at top, currentColor 92deg, #0000 0) top,
+                conic-gradient(from -46deg at bottom, currentColor 92deg, #0000 0) bottom;
+            background-size: 100% 50%;
+            background-repeat: no-repeat;
+        }
+
+        .loader:before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            --g: currentColor 14.5px, #0000 0 calc(100% - 14.5px), currentColor 0;
+            background:
+                linear-gradient(45deg, var(--g)),
+                linear-gradient(-45deg, var(--g));
+            animation: l7 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+        }
+
+        @keyframes l7 {
+            33% {
+                inset: -10px;
+                transform: rotate(0deg)
+            }
+
+            66% {
+                inset: -10px;
+                transform: rotate(90deg)
+            }
+
+            100% {
+                inset: 0;
+                transform: rotate(90deg)
+            }
+        }
     </style>
     <!-- Scripting -->
     <script>
@@ -113,75 +155,89 @@
             startScreen();
         }
 
-        let questions= [
-        {
-            question:"Among the following, which is a network?",
-            answers:["A) MAN","B) WAN","C) LAN","D) All of these"],
-            correct:4,
-        },
-        {
-            question:"What does Fn mean in Fn key of the computer keyboard?",
-            answers:["A) Finish","B) Function","C) Final","D) Fun"],
-            correct:2,
-        },
-        {
-            question: "CPU is also referred to as?",
-            answers:["A) Micro chip","B) Microprocessor","C) Decoder","D) Coder"],
-            correct:2,
-        }
+        let questions = [
+            {
+                question: "Among the following, which is a network?",
+                answers: ["A) MAN", "B) WAN", "C) LAN", "D) All of these"],
+                correct: 4,
+            },
+            {
+                question: "What does Fn mean in Fn key of the computer keyboard?",
+                answers: ["A) Finish", "B) Function", "C) Final", "D) Fun"],
+                correct: 2,
+            },
+            {
+                question: "CPU is also referred to as?",
+                answers: ["A) Micro chip", "B) Microprocessor", "C) Decoder", "D) Coder"],
+                correct: 2,
+            }
         ]
 
         let correctQuestionIndex = 0;
 
-        function displayQuestion(){
+        function displayQuestion() {
             let q = questions[correctQuestionIndex];
             // input question
             document.getElementById("text-display").innerHTML = q.question;
 
             // input option one
             document.getElementById("answer-one").innerHTML = q.answers[0];
-             // input option two
-             document.getElementById("answer-two").innerHTML = q.answers[1];
-              // input option three
+            // input option-two
+            document.getElementById("answer-two").innerHTML = q.answers[1];
+            // input option three
             document.getElementById("answer-three").innerHTML = q.answers[2];
-             // input option four
-             document.getElementById("answer-four").innerHTML = q.answers[3];
+            // input option four
+            document.getElementById("answer-four").innerHTML = q.answers[3];
 
         }
 
-        function answer(givenAnswer){
-            if(questions[correctQuestionIndex].correct === givenAnswer){
-                answerOne();
-                correctQuestionIndex ++;
-                if(correctQuestionIndex < questions.length){
+        function answer(givenAnswer) {
+
+            if (questions[correctQuestionIndex].correct === givenAnswer) {
+                document.getElementById("text-display").innerHTML = "Bilkul Sahi Jawab";
+                document.getElementById("text-display").style.color = "green";
+                correctQuestionIndex++;
+
+                if (correctQuestionIndex < questions.length) {
                     displayQuestion();
+                } else {
+                    document.getElementById("text-display").innerHTML = "MUBARAKHO AAP JIT CHUKE HAI PURE 7 CRORE RUPEES...";
                 }
-            }
-        }
 
-         // correct or not
-         function answerOne(correctAnswer, nextQuestion, correctAnswwerbutton, buttonClick) {
-            if (correctAnswer) {
-                document.getElementById("text-display").innerHTML =
-                    "Bilkul Sahi Jawab";
-                document.getElementById("container").style.backgroundColor =
-                    "#004225";
-                colorButton(correctAnswwerbutton, buttonClick);
-
-                setTimeout(() => {
-                    question(nextQuestion);
-                }, 3000);
             } else {
                 document.getElementById("text-display").innerHTML =
-                    " Galat Jawab.";
-                document.getElementById("container").style.backgroundColor =
-                    "#FF0000";
-                colorButton(correctAnswwerbutton, buttonClick);
-                setTimeout(() => {
+                    "Galat Jawab";
+                    document.getElementById("text-display").style.color = "red";
                     startScreen();
-                }, 2000);
             }
         }
+
+
+        //     function answer(givenAnswer) {
+        //     // document.getElementById("text-display").style.display = "none";
+        //     // document.getElementById("loader").style.display = "block";
+        //     // setTimeout(() => {
+        //     //     document.getElementById("loader").style.display = "none";
+        //     //     document.getElementById("text-display").style.display = "block";
+        //         if (questions[currentQuestionIndex].correct === givenAnswer) {
+        //             document.getElementById("text-display").innerHTML = "सही जवाब";
+        //             document.getElementById("text-display").style.backgroundColor = "green";
+        //             currentQuestionIndex++;
+        //             if (currentQuestionIndex < questions.length) {
+        //                 // setTimeout(displayQuestion, 5000);
+        //                 displayQuestion();
+        //             } else {
+        //                 document.getElementById("text-display").innerHTML = "मुबारको आप जीत चुके हैं पूरे 7 करोड़ रुपये";
+        //             }
+        //         } else {
+        //             document.getElementById("text-display").innerHTML = "गलत जवाब.";
+        //             document.getElementById("text-display").style.backgroundColor = "red";
+        //             // currentQuestionIndex = 0;
+        //             startScreen();
+        //             // setTimeout(displayQuestion, 5000);
+        //         }
+        //     // }, 5000);
+        // }
     </script>
 
 </head>
@@ -199,6 +255,7 @@
             <div class="left-side">
                 <div class="display" id="container">
                     <h1 id="text-display" class="text-display"></h1>
+
                 </div>
                 <!-- buttons -->
                 <button class="button" id="answer-one" onclick="answer(1)"></button>
