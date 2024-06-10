@@ -59,14 +59,13 @@
         /* left part */
         .left-side {
             /* background-color: rgb(56, 83, 83); */
-
-
-
-        }
+ 
+ }
 
         /* right part */
         .right-side {
             background-color: rgba(41, 29, 115, 0.4);
+            height: 100vh;
 
 
         }
@@ -140,7 +139,8 @@
             document.getElementById("play-button").hidden = true;
             document.getElementById("main-body").hidden = false;
             // display que
-            displayQuestion()
+            displayQuestion();
+            resetcolor();
         }
 
 
@@ -170,12 +170,64 @@
                 question: "CPU is also referred to as?",
                 answers: ["A) Micro chip", "B) Microprocessor", "C) Decoder", "D) Coder"],
                 correct: 2,
-            }
+            },
+            {
+                question: "Current Railway Minister of India is?",
+                answers: ["A) Mamta Banarjee", "B) Ram Vilash", "C) Ashwini Vaishnaw", "D) Piyush Goyal"],
+                correct: 3,
+            },
+            {
+                question:  "Which Indian currency note doesn't have a picture of Mahatma Gandhi?",
+                answers: ["A) 50 Rupee", "B) 1 Rupee ",  "C) 5 Rupee","D) 20 Rupee"],
+                correct: 2,
+            },
+            {
+                question: "What does not grow on tree according to a popular Hindi saying?",
+                answers: [ "A) Money","B) Flowers","C) Leaves","D) Fruits"],
+                correct: 1,
+            },
+            {
+                question:  "Which city is known as Pink City in India?",
+                answers: ["A) Banglore","B) Maysore","C) Kochi","D) Jaipur"],
+                correct: 4,
+            },
+            {
+                question:  "Who wrote India's National Anthem?",
+                answers: ["A) RK Narayan","B) Chetan Bhagat","C) Rabindranath Tagore","D) Lal Bahadur Shastri"],
+                correct: 3,
+            },
+            {
+                question: " How many religions are there in India?",
+                answers: ["A) 6","B) 7","C) 8","D) 9"],
+                correct: 1,
+            },
+            {
+                question:  "When is the National Hindi Diwas celebrated?",
+                answers: ["A) 13 Septembe","B) 14 Septembe","C) 14 July","D) 15 August"],
+                correct: 2,
+            },
+            // {
+            //     question: ,
+            //     answers: [],
+            //     correct: 2,
+            // },
+            // {
+            //     question: ,
+            //     answers: [],
+            //     correct: 2,
+            // },
+            // {
+            //     question: ,
+            //     answers: [],
+            //     correct: 2,
+            // },
         ]
 
         let correctQuestionIndex = 0;
 
         function displayQuestion() {
+            resetcolor();
+
             let q = questions[correctQuestionIndex];
             // input question
             document.getElementById("text-display").innerHTML = q.question;
@@ -189,55 +241,97 @@
             // input option four
             document.getElementById("answer-four").innerHTML = q.answers[3];
 
-        }
 
-        function answer(givenAnswer) {
-
-            if (questions[correctQuestionIndex].correct === givenAnswer) {
-                document.getElementById("text-display").innerHTML = "Bilkul Sahi Jawab";
-                document.getElementById("text-display").style.color = "green";
-                correctQuestionIndex++;
-
-                if (correctQuestionIndex < questions.length) {
+            if (correctQuestionIndex < questions.length) {
                     displayQuestion();
                 } else {
                     document.getElementById("text-display").innerHTML = "MUBARAKHO AAP JIT CHUKE HAI PURE 7 CRORE RUPEES...";
                 }
 
-            } else {
-                document.getElementById("text-display").innerHTML =
-                    "Galat Jawab";
-                    document.getElementById("text-display").style.color = "red";
-                    startScreen();
-            }
         }
 
+        // function answer(givenAnswer) {
 
-        //     function answer(givenAnswer) {
-        //     // document.getElementById("text-display").style.display = "none";
-        //     // document.getElementById("loader").style.display = "block";
-        //     // setTimeout(() => {
-        //     //     document.getElementById("loader").style.display = "none";
-        //     //     document.getElementById("text-display").style.display = "block";
-        //         if (questions[currentQuestionIndex].correct === givenAnswer) {
-        //             document.getElementById("text-display").innerHTML = "सही जवाब";
-        //             document.getElementById("text-display").style.backgroundColor = "green";
-        //             currentQuestionIndex++;
-        //             if (currentQuestionIndex < questions.length) {
-        //                 // setTimeout(displayQuestion, 5000);
-        //                 displayQuestion();
-        //             } else {
-        //                 document.getElementById("text-display").innerHTML = "मुबारको आप जीत चुके हैं पूरे 7 करोड़ रुपये";
-        //             }
+        //     if (questions[correctQuestionIndex].correct === givenAnswer) {
+        //         document.getElementById("text-display").innerHTML = "Bilkul Sahi Jawab";
+        //         document.getElementById("text-display").style.color = "green";
+        //         correctQuestionIndex++;
+
+        //         if (correctQuestionIndex < questions.length) {
+        //             displayQuestion();
         //         } else {
-        //             document.getElementById("text-display").innerHTML = "गलत जवाब.";
-        //             document.getElementById("text-display").style.backgroundColor = "red";
-        //             // currentQuestionIndex = 0;
-        //             startScreen();
-        //             // setTimeout(displayQuestion, 5000);
+        //             document.getElementById("text-display").innerHTML = "MUBARAKHO AAP JIT CHUKE HAI PURE 7 CRORE RUPEES...";
         //         }
-        //     // }, 5000);
+
+        //     } else {
+        //         document.getElementById("text-display").innerHTML =
+        //             "Galat Jawab";
+        //             document.getElementById("text-display").style.color = "red";
+        //             startScreen();
+        //     }
         // }
+
+         // correct or not
+         function answer(givenAnswer,correctAnswer, nextQuestion, correctAnswwerbutton, buttonClick) {
+          
+           
+            if (questions[correctQuestionIndex].correct === givenAnswer) {
+                document.getElementById("text-display").innerHTML =
+                    "Bilkul Sahi Jawab";
+                document.getElementById("container").style.backgroundColor =
+                    "#004225";
+                    colorButton(correctAnswwerbutton, buttonClick);
+        
+                    setTimeout(() => {
+                        displayQuestion(correctQuestionIndex);
+                }, 3000);
+               
+
+                    correctQuestionIndex++;
+             
+         } else {
+                document.getElementById("text-display").innerHTML =
+                    " Galat Jawab.";
+                document.getElementById("container").style.backgroundColor =
+                    "#FF0000";
+                colorButton(correctAnswwerbutton, buttonClick);
+                setTimeout(() => {
+                    startScreen();
+                }, 2000);
+            }
+        }
+    
+        // correct button color
+        function colorButton(correctbuttoncolor, wrongbuttoncolor) {
+            // if(correctbuttoncolor){
+            if (correctbuttoncolor == 1) {
+                document.getElementById("answer-one").style.backgroundColor = "#D04848";
+            } else if (correctbuttoncolor == 2) {
+                document.getElementById("answer-two").style.backgroundColor = "#D04848";
+            } else if (correctbuttoncolor == 3) {
+                document.getElementById("answer-three").style.backgroundColor = "#D04848";
+            } else if (correctbuttoncolor == 4) {
+                document.getElementById("answer-four").style.backgroundColor = "#D04848";
+            }
+            if (wrongbuttoncolor == 1) {
+                document.getElementById("answer-one").style.backgroundColor = "#87A922";
+            } else if (wrongbuttoncolor == 2) {
+                document.getElementById("answer-two").style.backgroundColor = "#87A922";
+            } else if (wrongbuttoncolor == 3) {
+                document.getElementById("answer-three").style.backgroundColor = "#87A922";
+            } else if (wrongbuttoncolor == 4) {
+                document.getElementById("answer-four").style.backgroundColor = "#87A922";
+            }
+
+        }
+        // resetcolor
+        function resetcolor() {
+            document.getElementById("answer-one").style.backgroundColor = "#0B60B0";
+            document.getElementById("answer-two").style.backgroundColor = "#0B60B0";
+            document.getElementById("answer-three").style.backgroundColor = "#0B60B0";
+            document.getElementById("answer-four").style.backgroundColor = "#0B60B0";
+        }
+
     </script>
 
 </head>
