@@ -1,0 +1,213 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta tags and stylesheets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Portfolio</title>
+    <!-- Internal styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* header section */
+        header {
+            padding: 1.7rem 1rem;
+            background-color: #272525;
+            display: flex;
+            justify-content: space-between;
+            max-width: 100%;
+            margin: auto;
+            align-items: center;
+            /* background-color: transparent; */
+        }
+
+      
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: .7px;
+            padding: 1rem;
+            padding: 0.4rem 1rem;
+        }
+
+        nav a.active,
+        nav a:hover {
+            color: #EE7214;
+            border-radius: 1rem;
+            transition: all.3s ease-in-out;
+        }
+
+        #click {
+            display: none;
+        }
+
+        .menu i {
+            color: #00E8F8;
+        }
+
+        .menu {
+            display: none;
+        }
+
+        section {
+            margin: 2rem 8.5rem;
+        }
+
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5rem auto;
+        }
+
+        .main h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: black;
+        }
+
+        .main p {
+            margin-top: 1rem;
+            font-size: .98rem;
+            color: black;
+        }
+
+        .social {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.4rem;
+            margin-top: 1.7rem;
+        }
+
+        .social a {
+            color: #00E8F8;
+            font-size: 1rem;
+            border: 1.6px solid #00E8F8;
+            border-radius: 50%;
+            padding: .35rem;
+            text-align: center;
+            width: 50px;
+            height: 30px;
+        }
+
+        .social a:hover {
+            color: #1F252E;
+            background-color: #00E8F8;
+            box-shadow: 0 0 20px #00E8F8;
+            transition: all .3s ease-in-out;
+        }
+
+        .main h1 span:nth-child(1) {
+            font-size: 1.5rem;
+        }
+
+        .main h1 span:nth-child(2) {
+            color: #00E8F8;
+        }
+
+        .images {
+            background-image: url();
+            background-repeat: no-repeat;
+            background-position: 0 -75px;
+            -webkit-box-shadow: 0 10px 10px -10px #000000;
+            -moz-box-shadow: 0 10px 10px -10px #000000;
+            box-shadow: 0px 16px 4px -10px #00E8F8;
+            width: 528px;
+            background-size: cover;
+
+        }
+
+        @keyframes check {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media only screen and (max-width:480px) {
+            .menu {
+                display: block;
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #244D61;
+            }
+
+            header {
+                padding: 0.7rem 1rem;
+                align-items: center;
+                max-width: 100%;
+            }
+
+            nav {
+                position: absolute;
+                display: grid;
+                top: 75px;
+                text-align: center;
+                background-color: #1F252E;
+                left: -100%;
+                z-index: 1;
+                width: 100%;
+            }
+
+            #click:checked~nav {
+                left: 0%;
+                transition: all 0.3s ease;
+            }
+
+            section {
+                margin: 1rem 1.5rem;
+            }
+
+        }
+    </style>
+</head>
+
+<body background="C:\Users\Admin\Desktop\Shivani_myProject-main\my_images\web image.jpg"  style="background-repeat: no-repeat; padding: 0; margin: 0;">
+    
+    <!-- Body of the HTML document -->
+    <header>
+        <!-- Header section with navigation -->
+        <input type="checkbox" id="click">
+        <label for="click" class="mainicon">
+            <div class="menu">
+                <i class="bi bi-list"></i>
+            </div>
+        </label>
+        <nav>
+            <!-- Navigation links -->
+            <a href="#" class="active">Home</a>
+            <a href="createresume.html">About</a>
+            <a href="#">Project</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section >
+        <!-- Main section of the webpage -->
+        <div class="main">
+            <div class="detail">
+                <h1><span>Hello</span> <br> I am <span style="color:brown">Shivani Kharpuriya</span></h1>
+                
+                
+            </div>
+           
+        </div>
+    </section>
+    <footer></footer>
+</body>
+
+</html>
