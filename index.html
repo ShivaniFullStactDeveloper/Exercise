@@ -138,6 +138,31 @@
             justify-content: space-between !important;
             margin-left: 6rem
         }
+/* social logo */
+/* Apply default styling to the anchor tags */
+.nav a {
+    display: inline-block; /* Ensures proper alignment */
+    transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Style for images inside anchor tags */
+.nav a img {
+    filter: invert(1) brightness(100%) sepia(1); /* Default white color */
+    transition: filter 0.3s ease; /* Smooth transition for filter effect */
+    color: white !important;
+}
+
+/* Hover effect for pink color */
+.nav a:hover img {
+    color: #E4003A !important;
+    filter: invert(0.8) brightness(1.2) sepia(0.5); /* Adjusts to pink color */
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+    
+}
+
+
+
+
 
 
         /* For Mobile View */
@@ -151,7 +176,7 @@
             }
         }
     </style>
-    <script>
+    <!-- <script>
         (() => {
             window.addEventListener('DOMContentLoaded', () => {
                 const colorModeSwitch = document.getElementById('colorModeSwitch');
@@ -162,7 +187,7 @@
                 }
             });
         })();
-    </script>
+    </script> -->
 </head>
 
 <body>
@@ -257,8 +282,8 @@
         <!-- About -->
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5" id="about">
             <div class="col-10 col-sm-8 col-lg-6">
-                <video controls src="VID_20240806124316.mp4"
-                    class="d-block mx-lg-auto img-fluid" alt="About Image" width="700" height="500" loading="lazy">
+                <video controls src="w_video.mp4" 
+                    class="d-block mx-lg-auto img-fluid" alt="About Image" width="700" height="700" loading="lazy">
             </div>
             <div class="col-lg-6">
                 <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">&emsp;<span class="wanjari-name">Wanjari
@@ -359,48 +384,50 @@
                                 can
                                 sit
                                 and play, enjoying a ride-on car experience that sparks joy and excitement.</p>
-                            <a href="booking.html" class="btn btn-primary book-button">Book Now</a>
+                            <a href="booking.html" class="btn btn-primary book-button" >Book Now</a>
                         </div>
                     </div>
                 </div>
+                <P id="contact"></P>
             </div>
         </div>
+       
     </div>
     <!-- Contact -->
-    <div class="container py-5" id="contact">
+    <div class="container py-5" >
         <h2 class="text-center mb-5 text-bold">Contact<span class="wanjari-name"> Us</span></h2>
         <!--  -->
         <div class="row con-circle">
             <div class="col-lg-4">
-                <img style="margin-left: 3rem;" class="bd-placeholder-img rounded-circle" width="140" height="140"
+                <img style="margin-left: 3rem;" class="bd-placeholder-img rounded-circle" width="150" height="150"
                     src="IMG_20240806_014159.jpg" role="img" aria-label="Placeholder"
                     preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
                 <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
                 </svg>
-                <h2 class="fw-normal">Chanchal Wanjari</h2>
+                <h2 class="fw-normal text-bold">Chanchal Wanjari</h2>
                 <!-- <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p> -->
                 <p>Contact : 92********</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
-                <img style="margin-left: 2rem;" class="bd-placeholder-img rounded-circle" width="140" height="140"
-                    src="IMG_20240806_014159.jpg" role="img" aria-label="Placeholder"
+                <img style="margin-left: 2rem;" class="bd-placeholder-img rounded-circle" width="150" height="150"
+                    src="tushar.jpg" role="img" aria-label="Placeholder"
                     preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
                 <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
                 </svg>
-                <h2 class="fw-normal">Tushar Wanajri</h2>
+                <h2 class="fw-normal text-bold">Tushar Wanajri</h2>
                 <!-- <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p> -->
                 <p>Contact : 54********</p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
-                <img style="margin-left: 2rem;" class="bd-placeholder-img rounded-circle" width="140" height="140"
-                    src="IMG_20240806_014159.jpg" role="img" aria-label="Placeholder"
+                <img style="margin-left: 2rem;" class="bd-placeholder-img rounded-circle" width="150" height="150"
+                    src="IMG-20240806-WA0014.jpg" role="img" aria-label="Placeholder"
                     preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
                 <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
                 </svg>
-                <h2 class="fw-normal">Sachin Wanjari</h2>
+                <h2 class="fw-normal text-bold">Sachin Wanjari</h2>
                 <!-- <p>And lastly this, the third column of representative placeholder content.</p> -->
                 <p>Contact : 56********</p>
             </div><!-- /.col-lg-4 -->
@@ -434,21 +461,30 @@
             </a>
             <span class="mb-3 mb-md-0 text-body-secondary" style="color: white !important;">© 2024 Wanjari Games And Adventure</span>
         </div>
-
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex" style="margin-right: 6px; ">
-            <li class="ms-3"><a class="text-body-secondary" href="#"><img  src="whatsapp.svg" class="bi" width="24"
-                        height="24">
-                    <use xlink:href="#whatsapp"></use>
-                </a></li>
-            <li class="ms-3"><a class="text-body-secondary" href="#"><img src="instagram.svg" class="bi" width="24"
-                        height="24">
-                    <use xlink:href="#instagram"></use>
-                </a></li>
-            <li class="ms-3"><a class="text-body-secondary" href="#"><img src="facebook.svg" class="bi" width="24"
-                        height="24">
-                    <use xlink:href="#facebook"></use>
-                </a></li>
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex" style="margin-right: 15px; display: flex; gap: 15px;">
+            <li class="ms-3">
+                <!-- whatsapp -->
+                <a class="text-body-secondary" href="#">
+                    <img src="whatsapp.svg" class="bi" width="24" height="24">
+                </a>
+            </li>
+            <li class="ms-3">
+                <!-- instagram -->
+                <a class="text-body-secondary" href="#">
+                    <img src="instagram.svg" class="bi" width="24" height="24">
+                </a>
+            </li>
+            <li class="ms-3">
+                <!-- facebook -->
+                <a class="text-body-secondary" href="#">
+                    <img src="facebook.svg" class="bi" width="24" height="24">
+                </a>
+            </li>
         </ul>
+        
+    
+        
+        
     </footer>
     </div>
 </body>
