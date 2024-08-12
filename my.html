@@ -19,13 +19,14 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            background-color: black;
         }
 
         header {
             background: #333;
             color: white;
             position: fixed;
-            width: 100vw;
+            width: 100%;
             height: 10vh;
             z-index: 1;
 
@@ -36,6 +37,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 5px;
+            margin-right: 5vw;
 
         }
 
@@ -101,108 +103,131 @@
                 display: flex;
             }
 
-        }
-
-        /* intoduction part */
-        /* content */
-        .content {
-            margin-left: 4rem;
-            /* margin-top: 4rem; */
-        }
-
-        .content .intro {
-            font-size: 1.5rem;
-            color: black;
-            font-weight: bold;
-            margin-top: 0rem;
-        }
-
-        /*  */
-        .content .intro span {
-            font-size: 3rem;
-            font-weight: 600;
-            line-height: 4rem;
-            /* color: #5DB9EE; */
-            color: #3877ff;
-            margin-top: 30rem;
-            z-index: 1;
-        }
-
-        .content h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #262525;
-            text-shadow: 0 10px 10px rgba(73, 148, 233, 0.5);
-        }
-
-
-        .but-contain {
-            margin-left: 30%;
+            section {
+                margin: 1rem 1.5rem;
+                height: 90vh;
+            }
 
         }
 
-        button {
-            border: .2rem solid #5DB9EE;
-            font-size: 1.1rem;
-            padding: .8rem 1.2rem;
-            border-radius: .5rem;
-            background: #262525;
-            color: #5DB9EE;
-            margin: .1rem;
-            cursor: pointer;
-            transition: .5s ease-in-out;
-            margin-left: 15%;
-            text-decoration: none;
-
-
+        section {
+            margin: 0rem 8.5rem;
         }
 
-        button :hover {
-            background: transparent;
-            color: #26252E;
-
-        }
-
-        .cv {
-            font-size: 1.1rem;
-            background: #262525;
-            color: #5DB9EE;
-            cursor: pointer;
-            transition: .5s ease-in-out;
-            text-decoration: none;
-
-        }
-
-        .cv:hover {
-            background: transparent;
-            color: #dcd9f1;
-        }
-
-        /* first box */
-        .first-section {
-            background-color: black;
-            height: 100vh;
-            width: 100vw;
-            margin: 0;
-
-            /* background-image: url(stock-photo--global.jpg);
-            position: absolute;
-            background-repeat: no-repeat;
-            background-size: cover;
-            object-fit: fill; */
-        }
-
-        img {
-            height: 30%;
-            width: 30%;
-            /* float: right; */
-            /* margin-top: 8rem; */
+        .main {
             display: flex;
-            flex-direction: row;
-            justify-content: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
             align-items: center;
-
+            margin: 1rem auto;
         }
+
+        .main h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .main p {
+            margin-top: 1rem;
+            font-size: .98rem;
+            color: #fff;
+        }
+
+        .social {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.4rem;
+            margin-top: 1.7rem;
+        }
+
+        .social a {
+            color: #00E8F8;
+            font-size: 1rem;
+            border: 1.6px solid #00E8F8;
+            border-radius: 60%;
+            padding: .35rem;
+            text-align: center;
+            width: 50px;
+            height: 40px;
+        }
+
+        .social a:hover {
+            color: #1F252E;
+            background-color: #00E8F8;
+            box-shadow: 0 0 20px #00E8F8;
+            transition: all .3s ease-in-out;
+        }
+
+        .main h1 span:nth-child(1) {
+            font-size: 1.5rem;
+        }
+
+        .main h1 span:nth-child(2) {
+            color: #00E8F8;
+        }
+
+        .images {
+            /* background-image: url(); */
+            /* background-repeat: no-repeat;
+            background-position: 0 -75px;
+            -webkit-box-shadow: 10 5px 10px -10px #000000;
+            -moz-box-shadow: 10px 10px 0px -10px #8d2269;
+            box-shadow: 0px 16px 4px -10px #00E8F8; 
+            width: 528px;
+            background-size: cover; */
+            box-shadow: 10px 10px 10px 10px #00E8F8; 
+            /* width: 500px; */
+        }
+
+        @keyframes check {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+      
+          .contain-main{
+            height: 100vh;
+            width: 100%;
+          }
+
+        .first-sec{
+            height: 10vh;
+            width: 100%;
+        }
+        .sec-sec{
+            height: 90vh;
+            width: 100%;
+        }
+        /* button */
+        .but-contain{
+   margin-left: 30%;
+}
+
+button{
+    border: .1rem solid #5DB9EE;
+    font-size: 1.1rem;
+    padding: .8rem 1.2rem;
+    border-radius: .5rem;
+    background: transparent;
+    color: #5DB9EE;
+    margin: 2rem;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+    
+}
+button:hover{
+    background: #5DB9EE;
+    color: #262525;
+}
+       
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -218,8 +243,9 @@
 </head>
 
 <body>
-    <div class="container-fluide">
+    <div class="container-fluide contain-main">
         <!-- header part -->
+         <div class="first-sec">
         <header>
             <!-- nav bar -->
             <nav class="navbar">
@@ -244,10 +270,36 @@
                 </div>
             </nav>
         </header>
+    </div>
+        
+         <div class="sec-sec">
+        <section>
+            <!-- Main section of the webpage -->
+            <div class="main">
+                <div class="detail">
+                    <h1><span>Hi,</span> <br> I'm <span style="color:#00E8F8;">Shivani Kharpuriya</span></h1>
+                    <h3>Full Stack Developer </h3>
+                    <div class="social">
+                        <!-- Social media links -->
+                        <a href="https://github.com/"><i class="bi bi-github"></i></a>
+                        <a href="https://join.skype.com/invite/tnbPlqreCs9w"><i class="bi bi-skype"></i></a>
+                        <a href="https://www.linkedin.com/in/divyanshu-thakare-2b8187228"><i class="bi bi-linkedin"></i></a>
+                      
+                    </div>
+                    <div class="but-contain">
+                        <p style="color: rgb(122, 126, 130);">click here to see my projects.</p>
+                        <button>View Pro ject</button>
+                    </div>
+                </div>
+                <div >
+                    <!-- Placeholder for an image -->
+                    <img class="images" src="Chivu_processed1.jpg" alt="" width="80%" height="500px">
+                </div>
 
-        <div>
-            
-        </div>
+               
+            </div>
+        </section>
+    </div>   
 </div>
 
 
