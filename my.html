@@ -23,7 +23,7 @@
         }
 
         header {
-            background: #333;
+            /* background: #333; */
             color: white;
             position: fixed;
             width: 100%;
@@ -41,8 +41,11 @@
 
         }
 
-        .logo h1 {
-            margin: 0;
+        .logo h1{
+            font-size: 25px;
+            margin: 5px;
+            margin-left: 5px;
+            text-decoration: underline;
         }
 
         .nav-links {
@@ -50,6 +53,7 @@
         }
 
         .nav-links a {
+            font-size: 20px;
             color: white;
             text-decoration: none;
             padding: 15px;
@@ -57,7 +61,10 @@
         }
 
         .nav-links a:hover {
-            background: #555;
+            color: #E4003A;
+            font-weight: bold;
+            text-decoration: underline 0.1rem white;
+            
         }
 
         .toggle-button {
@@ -73,15 +80,14 @@
         .toggle-button .bar {
             width: 25px;
             height: 3px;
-            background: rgb(202, 17, 17);
-            margin: 5px 0;
+            background: white;
+            margin: 4px 0;
         }
 
         .toggle-button .bar:hover {
             width: 25px;
             height: 3px;
-            background: white;
-            margin: 5px 0;
+            margin: 4px 0;
         }
 
         @media (max-width: 768px) {
@@ -91,8 +97,8 @@
                 width: 100%;
                 background: #333;
                 position: absolute;
-                top: 30px;
-                left: 0;
+                top: 40px;
+                right: 0;
             }
 
             .nav-links.active {
@@ -105,7 +111,7 @@
 
             section {
                 margin: 1rem 1.5rem;
-                height: 90vh;
+                height: 100vh;
             }
             .images{
                 width: 100%;
@@ -129,13 +135,34 @@
         }
 
         .main h1 {
-            font-size: 2.5rem;
+            font-size: 1.6rem;
             font-weight: 600;
             color: #fff;
         }
 
-        .main p {
+        .main span{
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        .main h2{
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .main h3{
+            font-size: 3rem;
             margin-top: 1rem;
+            font-weight: 600;
+            color: white;
+            text-shadow: 0px 10px 10px 10px #E4003A;;
+        }
+
+        p {
+            margin-top: 2rem;
+            margin-left: 1rem;
+            margin-bottom: 0;
             font-size: .98rem;
             color: #fff;
         }
@@ -145,6 +172,8 @@
             flex-wrap: wrap;
             gap: 1.4rem;
             margin-top: 1.7rem;
+            /* margin-left: 5.7rem; */
+            margin-bottom: 0.5rem
         }
 
         .social a {
@@ -156,6 +185,7 @@
             text-align: center;
             width: 50px;
             height: 40px;
+          
         }
 
         .social a:hover {
@@ -199,34 +229,37 @@
           }
 
         .first-sec{
-            height: 10vh;
+            height: 15vh;
             width: 100%;
         }
         .sec-sec{
-            height: 90vh;
+            height: 85vh;
             width: 100%;
         }
         /* button */
         .but-contain{
-   margin-left: 30%;
+   margin-left: 20%;
 }
 
-button{
-    /* border: .1rem solid #5DB9EE; */
+.button-cv{
+    /* border: .1rem solid #E4003A; */
     border: .1rem solid ;
     font-size: 1.1rem;
     padding: .8rem 1.2rem;
     border-radius: .5rem;
-    background: transparent;
-    color: #5DB9EE;
-    margin: 2rem;
+    /* background: transparent; */
+    background-color: #E4003A;
+    color: rgb(214, 208, 208);
+    margin: 1.5rem;
+    /* margin-left: 1rem; */
     cursor: pointer;
     transition: .5s ease-in-out;
     
 }
-button:hover{
-    background: #5DB9EE;
-    color: #262525;
+.button-cv:hover{
+    background: white;
+    color: #E4003A;
+    font-weight: bold;
 }
        
     </style>
@@ -240,18 +273,36 @@ button:hover{
             });
         });
 
+         // first page show
+         function firstPage() {
+            console.log("firstPage");
+            document.getElementById("first-section").hidden = false;
+            document.getElementById("second-section").hidden = true;
+        }
+        // second page show
+        function secondPage() {
+            console.log("secondPage");
+            document.getElementById("first-section").hidden = true;
+            document.getElementById("second-section").hidden = false;
+        }
+
+        // first page show
+        window.onload = function () {
+            firstPage();
+        }
+
     </script>
 </head>
 
 <body>
-    <div class="container-fluide contain-main">
+    <div class="container-fluide contain-main" id="first-section">
         <!-- header part -->
          <div class="first-sec">
         <header>
             <!-- nav bar -->
             <nav class="navbar">
                 <div class="logo">
-                    <h1>Portfolio</h1>
+                    <h1>Port<span style="color: #E4003A; font-weight: bold; ">folio</span></h1>
                 </div>
                 <!-- mobile responsive menu bar -->
                 <button class="toggle-button" aria-label="Toggle navigation">
@@ -261,9 +312,9 @@ button:hover{
                 </button>
                 <div class="nav-links">
                     <!-- home -->
-                    <a href="#home">Home</a>
+                    <a href="#home" style="color: #E4003A; font-weight: bold;">Home</a>
                     <!-- project -->
-                    <a href="#services">Project</a>
+                    <a href="#" onclick="secondPage()">Project</a>
                     <!-- about -->
                     <a href="#about">About</a>
                     <!--  contact -->
@@ -278,7 +329,8 @@ button:hover{
             <!-- Main section of the webpage -->
             <div class="main">
                 <div class="detail">
-                    <h1><span>Hi,</span> <br> I'm <span style="color:#E4003A;">Shivani Kharpuriya</span></h1>
+                    <h2>Hi!</h2>
+                        <h1> I'm <span style="color:#E4003A;">Shivani Kharpuriya</span></h1>
                     <h3>Full Stack Developer </h3>
                     <div class="social">
                         <!-- Social media links -->
@@ -288,8 +340,8 @@ button:hover{
                       
                     </div>
                     <div class="but-contain">
-                        <p style="color: rgb(122, 126, 130);">click here to see my projects.</p>
-                        <button>View Pro ject</button>
+                        <p style="color: rgb(122, 126, 130);">click here to see my CV.</p>
+                        <a href="#"><button class="button-cv" >Download CV</button></a>
                     </div>
                 </div>
                 <div >
@@ -302,7 +354,10 @@ button:hover{
         </section>
     </div>   
 </div>
+<!-- next page -->
+ <div id="second-section" style="background-color: #E4003A;">
 
+ </div>
 
 </body>
 
