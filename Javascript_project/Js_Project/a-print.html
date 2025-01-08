@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print A in Star Pattern</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+           
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+        pre {
+            font-family: monospace;
+            color: #00ffcc;
+            font-size: 18px;
+            line-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Print "A" in Star Pattern</h1>
+    <button onclick="printB()">Show A Pattern</button>
+    <pre id="output"></pre>
+
+    <script>
+        // function printA() {
+        //     const n = 7; // Height of the letter "A"
+        //     let pattern = "";
+
+        //     for (let i = 0; i < n; i++) {
+        //         for (let j = 0; j < 2 * n - 1; j++) {
+        //             // Logic to create "A"
+        //             if (
+        //                 j === n - i - 1 || j === n + i - 1 || 
+        //                 (i ===Math.floor(n / 2) && j > n - i - 1 && j < n + i - 1)
+        //             ) {
+        //                 pattern += "*";
+        //             } else {
+        //                 pattern += " ";
+        //             }
+        //         }
+                
+        //         pattern += "\n"; 
+            
+        //     }
+        //     // Display pattern in the <pre> tag
+        //     // document.getElementById("output").textContent = pattern;
+        //     console.log(pattern);
+        // }
+
+        function printB() {
+            const n = 7; // Height of the letter "B"
+            let pattern = "";
+
+            for (let i = 0; i < n; i++) {
+                for (let j = 0; j < n; j++) {
+                    // Logic to create "B"
+                    if (
+                        j === 0 || // Left vertical line
+                        (i === 0 && j < n - 1) || // Top horizontal line
+                        (i === Math.floor(n / 2) && j < n - 1) || // Middle horizontal line
+                        (i === n - 1 && j < n - 1) || // Bottom horizontal line
+                        (j === n - 1 && i !== 0 && i !== Math.floor(n / 2) && i !== n - 1) // Right vertical lines
+                    ) {
+                        pattern += "*";
+                    } else {
+                        pattern += " ";
+                    }
+                }
+                pattern += "\n";
+            }
+
+            // Display pattern in the <pre> tag
+            document.getElementById("output").textContent = pattern;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      
+    }
+    button{
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row  ;
+      justify-content: center;
+      align-self: center;
+    }
+    .but-contain{
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+   
+    }
+  </style>
+  <script>
+    // function myFunction() {
+    //   let num = 2;
+    //   while(num <= 22){
+    //     if(num !=10 && num != 14 && num != 20){
+    //     console.log(num);
+    //     }
+    //     num = num + 2;
+    //   }
+    // }
+
+    // function myFunction() {
+    //   const num = [1,2,3,4,5,6,7,8,9,10];
+    //   let result = num[0];
+    //   while(result <= num){
+        
+    //        console.log(result);
+    //        result = result * 3
+    //        result ++;
+    //   } 
+      
+
+      //   result = num [num.length * 3];
+      //   console.log(result);
+      //   num =+ num
+      // }
+     
+    function myFunction() {
+  const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  let x = 0; // Start with the first index
+  
+  while (x < num.length) {
+    const result = num[x] * 3; // Multiply the current element by 3
+    console.log(result); // Output the result
+    x++; // Move to the next index
+  }
+}
+    
+// function myFunction() {
+//   const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//   let index = 0; // Start with the first index
+  
+//   while (index < num.length) {
+//     const result = num[index] * 3; // Multiply the current element by 3
+//     console.log(result); // Output the result
+//     index++; // Move to the next index
+//   }
+// }
+
+// function countOccurrences(array, target) {
+//   let count = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] === target) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+// // Example usage:
+// const inputArray = [10, 20, 20, 30, 40, 50, 10, 70, 80];
+// const targetNumber = 60;
+
+// const occurrences = countOccurrences(inputArray, targetNumber);
+// console.log(`Occurrence of ${targetNumber} is ${occurrences}`);
+
+function occurrence(array,target){
+
+  let count = 0;
+  for(let i=0; i<array.length; i++){
+    if(array[i] === target){
+      count++;
+    }
+  
+  }
+return count;
+}
+const arrayno = [10,20,10,50,60,70,80,50];
+const targetno = 50;
+const total = occurrence(arrayno,targetno);
+console.log(`occurrence of ${targetno} is ${total}`);  // Output: 2
+    
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>WHILE LOOP PROGRAM</h1>
+    <div class="but-contain">
+    <button onclick="occurrence()">Click</button>
+    </div>
+  </div>
+</body>
+</html>
